@@ -9,8 +9,8 @@ services:
     ports:
       - "5432:5432"
     environment:
-      POSTGRES_PASSWORD: 1123QwER
-      POSTGRES_USER: db_admin
       POSTGRES_DB: petstagram
+      POSTGRES_USER: db_admin
+      POSTGRES_PASSWORD: 1123QwER
     volumes:
       - ./postgresql/data:/var/lib/postgresql/data
