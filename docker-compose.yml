@@ -1,0 +1,16 @@
+
+version: '3.4'
+
+services:
+  postgres:
+    container_name: petstagram_instance
+    image: postgres
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: 1123QwER
+      POSTGRES_USER: db_admin
+      POSTGRES_DB: petstagram
+    volumes:
+      - ./postgresql/data:/var/lib/postgresql/data
