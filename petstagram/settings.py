@@ -93,6 +93,7 @@ DATABASES = {
         'HOST': 'ec2-54-216-48-43.eu-west-1.compute.amazonaws.com',
         'PORT': '5432',
     }
+    
 }
 
 AUTH_PASSWORD_VALIDATORS = [
