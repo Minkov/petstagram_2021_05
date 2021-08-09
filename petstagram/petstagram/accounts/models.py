@@ -24,10 +24,7 @@ class PetstagramUser(AbstractBaseUser, PermissionsMixin):
 
 
 class Profile(models.Model):
-    profile_image = models.ImageField(
-        upload_to='profiles',
-        blank=True,
-    )
+    profile_image = models.ImageField(upload_to='profiles',blank=True,)
     user = models.OneToOneField(
         PetstagramUser,
         on_delete=models.CASCADE,
