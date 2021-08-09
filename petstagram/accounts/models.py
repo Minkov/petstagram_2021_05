@@ -2,6 +2,8 @@ from django.contrib.auth.base_user import AbstractBaseUser
 from django.contrib.auth.models import User, PermissionsMixin
 from django.db import models
 
+from cloudinary import models as cloudinary_models
+
 from petstagram.accounts.managers import PetstagramUserManager
 
 
@@ -14,16 +16,17 @@ class PetstagramUser(AbstractBaseUser, PermissionsMixin):
         default=False,
     )
 
-    date_joined = models.DateTimeField(auto_now_add=True,)
+    date_joined = models.DateTimeField(auto_now_add=True, )
 
     USERNAME_FIELD = 'email'
 
     objects = PetstagramUserManager()
 
+
 class Profile(models.Model):
-    profile_image = models.ImageField(
+    profile_image = cloudinary_models.CloudinaryField(
+        resource_type='image',
         blank=True,
-        upload_to='profiles',
     )
     user = models.OneToOneField(
         PetstagramUser,

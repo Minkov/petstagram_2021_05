@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import os
 from pathlib import Path
+import cloudinary
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -132,3 +133,10 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media_files'
 
 AUTH_USER_MODEL = 'accounts.PetstagramUser'
+
+cloudinary.config(
+    cloud_name='minkov',
+    api_key="616642676284453",
+    api_secret="sTKrrlcT3TzS154w3q52ZJ71Ilk",
+    secure=True
+)
