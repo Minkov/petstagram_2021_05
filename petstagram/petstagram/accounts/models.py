@@ -14,9 +14,7 @@ class PetstagramUser(AbstractBaseUser, PermissionsMixin):
         default=False,
     )
 
-    date_joined = models.DateTimeField(
-        auto_now_add=True,
-    )
+    date_joined = models.DateTimeField(auto_now_add=True,)
 
     USERNAME_FIELD = 'email'
 
@@ -25,8 +23,8 @@ class PetstagramUser(AbstractBaseUser, PermissionsMixin):
 
 class Profile(models.Model):
     profile_image = models.ImageField(
-        upload_to='profiles',
         blank=True,
+        upload_to='profiles',
     )
     user = models.OneToOneField(
         PetstagramUser,
