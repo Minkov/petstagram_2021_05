@@ -12,13 +12,6 @@ class PetForm(BootstrapFormMixin, forms.ModelForm):
     class Meta:
         model = Pet
         exclude = ('user',)
-        widgets = {
-            'name': forms.TextInput(
-                attrs={
-                    'class': 'some-class',
-                }
-            ),
-        }
 
 
 class EditPetForm(PetForm):
