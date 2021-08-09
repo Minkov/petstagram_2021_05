@@ -20,7 +20,6 @@ class PetstagramUser(AbstractBaseUser, PermissionsMixin):
 
     objects = PetstagramUserManager()
 
-
 class Profile(models.Model):
     profile_image = models.ImageField(
         blank=True,
